@@ -1,1 +1,3 @@
-# 와이어프레임.text-center
+<div align="center">
+# 와이어프레임
+</div>
