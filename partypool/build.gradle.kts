@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "2.6.0-RC1"
+	id("org.springframework.boot") version "2.5.6"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
-	kotlin("jvm") version "1.6.0-RC"
-	kotlin("plugin.spring") version "1.6.0-RC"
-	kotlin("plugin.jpa") version "1.6.0-RC"
+	kotlin("jvm") version "1.5.31"
+	kotlin("plugin.spring") version "1.5.31"
+	kotlin("plugin.jpa") version "1.5.31"
 }
 
 group = "com.se"
@@ -14,19 +14,16 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
 	mavenCentral()
-	maven { url = uri("https://repo.spring.io/milestone") }
 }
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-mustache")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	runtimeOnly("mysql:mysql-connector-java")
 	runtimeOnly("com.h2database:h2")
+	runtimeOnly("com.microsoft.sqlserver:mssql-jdbc")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
