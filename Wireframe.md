@@ -1,5 +1,5 @@
 <div align="center">
- <h2>와이어프레임</h2>
+ <h1>와이어프레임</h1>
  
  <h4>시작화면</h4>
  <img width="628" alt="시작 화면" src="https://user-images.githubusercontent.com/80960372/140480949-0f94c688-3b58-40a8-86dc-e4ad4589d506.png">
