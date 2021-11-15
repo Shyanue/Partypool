@@ -3,17 +3,23 @@ package com.se.partypool.repository
 import javax.persistence.*
 
 @Entity
-class User(
+class Reservation(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
 
     @Column(nullable = false)
-    var userId: String,
+    var placeId: Long,
 
     @Column(nullable = false)
-    var userPw: String,
+    var hostId: Long,
 
     @Column(nullable = false)
-    var userType: String //Host or Guest
+    var guestId: Long,
+
+    @Column(nullable = false)
+    var date: String, //yyyy-mm-dd
+
+    @Column(nullable = false)
+    var num: Int
 )

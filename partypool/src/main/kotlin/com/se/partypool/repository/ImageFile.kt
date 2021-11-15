@@ -1,19 +1,21 @@
 package com.se.partypool.repository
 
+import jdk.jfr.DataAmount
 import javax.persistence.*
 
+@DataAmount
 @Entity
-class User(
+class ImageFile(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
 
     @Column(nullable = false)
-    var userId: String,
+    var name: String,
 
     @Column(nullable = false)
-    var userPw: String,
+    var oriName: String,
 
     @Column(nullable = false)
-    var userType: String //Host or Guest
+    var uri: String
 )
