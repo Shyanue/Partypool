@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StartPage</title>
+    <link rel ="stylesheet" href="style.css"/>
+    <style>
+    body{
+        background-image: url("img/party.png");
+        background-size : cover ;
+        overflow:auto;
+    }
+    </style>
+</head>
+<body>
+    <header0>
+        <nav>
+            <li><a href = "StartPage.html">PARTYPOOL</a></li>
+        </nav>
+    </header0>
+    <header1>
+        <nav>
+            <li><a href = "CheckReservation_Customer.html">예약 확인</a></li>
+            <li><a href = "SignUp.html">회원 가입</a></li>
+            <li><a href = "Login.html">로그인</a></li>
+        </nav>
+    </header1>
+  
+    <container1>
+        <p style="padding-top: 15px;">어느 지역의 파티룸을 원하시나요?</p>
+        <mainPageBox>
+            
+            <select name ="District" value="지역" width= "600px" height = "20px">
+                <!--d: district, c: city, t: town-->
+                <option value="d1">서울</option>
+                <option value="d2">경기</option>
+                <option value="d3">인천</option>
+                <option value="d4">대전/충청/세종</option>
+                <option value="d5">부산/대구/경상</option>
+                <option value="d6">광주/전라</option>
+                <option value="d7">강원</option>
+            </select>
+             
+            <select name ="District" size="5" placeholder="시/구/군">
+                
+            </select>
+             
+            <select name ="District" size="5" placeholder="지역">
+                
+            </select>
+        </mainPageBox>
+
+        <div style="float:right; padding-right: 10px">
+
+        </div>
+    </container1>
+</body>
+</html>
