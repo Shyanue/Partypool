@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StartPage</title>
+    <link rel ="stylesheet" href="style.css"/>
+    <style>
+    body{
+        background-image: url("img/party.png");
+        background-size : cover ;
+        overflow:auto;
+    }
+    
+    #input1{/*회원가입 박스*/
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+    }
+    #input2{/*버튼*/
+        width: 120px;
+        height: 35px;
+        border-radius: 5px;
+        background: lightgray;
+    }
+    #input3{/*버튼*/
+        width: 80px;
+        height: 30px;
+        border-radius: 10px;
+        background: lightgray;
+    }
+    </style>
+</head>
+<body>
+    <header0>
+        <nav>
+            <li><a href = "StartPage.html">PARTYPOOL</a></li>
+        </nav>
+    </header0>
+    <header2>
+        <span><a href = "StartPage.html">흠으로</a></span>
+    </header2>
+    
+    <container2>
+    <div>
+        <p style="padding-top: 20px;">STEP 1 : 당신은 호스트인가요 회원인가요?</p>
+        <img src="img/host.png" alt="Host" width="100" height="100" style="padding-right: 50px;">
+        <img src="img/customer.png" alt="Customer" width="100" height="100"style="padding-left: 50px;">
+        <div style="word-spacing: 165px">
+            <span style="font-size: medium; font-weight: bold;">호스트</span>
+            <span style="font-size: medium;font-weight: bold; padding-right: 7px;">회원</span>
+        </div>
+        <!--Radio Buttons-->
+        <label><input type="radio" name ="UserType" value ="Host" style="margin-right:95px"></label>
+        <label><input type="radio" name ="UserType" value ="Customer"style="margin-left:92px"></label>
+    </div>
+    <div>
+        <br>
+        <p>STEP 2 : 아이디와 비밀번호를 입력하세요</p>
+        <div style="float:left; text-align:left; padding-left: 35%;">
+        <!--form action="로그인 서버 프로그램 url 삽입-->
+            <form name="SignUp" method="post">
+                <p style="font-size: medium;">아이디 확인<br>
+                <input id="input1" type="text" name="user_ID" placeholder="아이디 입력" >
+                <input id="input2" type="button" name="user_IDcheck" value="아이디 확인">
+                </p>
+                <p style="font-size: medium;">비밀번호<br> 
+                <input id="input1" type="password" name="user_PW1" value="123456">
+                </p>
+                <p style="font-size: medium;">비밀번호 재확인<br> 
+                <input id="input1" type="password" name="user_PW2" value="123456">
+                <input id="input2" type="button" name="user_PWcheck" value="비밀번호 재확인"> 
+                </p>   
+            </form>
+        </div>
+    </div>
+    <br><br> <br><br><br><br><br><br><br><br><br><br>
+        <p style="font-size: medium;">이미 회원이십니까?
+        <a href = "Login.html"><input id="input3" type="button" name="Login"  value="로그인"></a></p>
+        <br>
+        <div style="float:right; padding-right: 10%; font-size: large;">
+            <input id="input3" type="button" name="SingUpComplete" value="완료">
+        </div>
+    </container2>
+</body>
+</html>
