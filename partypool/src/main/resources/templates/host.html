@@ -5,19 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-latest.min.js" type="application/javascript"></script>
+      <script type="application/javascript" src="https://zelkun.tistory.com/attachment/cfile8.uf@99BB7A3D5D45C065343307.js"></script>
 
     <title>HostMainPage</title>
-    <link rel ="stylesheet" href="static/style.css"/>
+    <link rel ="stylesheet" href="../static/style.css"/>
     <style>
-    body{
-        background-image: url("img/party.jpg");
-    }
+        body{
+            background-color: black;
+        }
     </style>
 </head>
 <body>
 
     <div id="container">
-        <h1 class = "d-flex justify-content-center">PARTYPOOL</h1>
+        <h1 class = "d-flex justify-content-center" href="host.html">PARTYPOOL</h1>
     </div><br>
 
     <ul id ="nav">
@@ -25,24 +27,23 @@
     </ul>
     <br><br>
 
-    <div class="big">
-        <div class="small" style="clear:both">
+    <div class="big"><!-- 가운데 어떻게 맞추지??-->
+        <div class="small" style="clear:both; display: flex; justify-content: center;" >
             <table class ="imgsertoku" align="center" id="room1">
                 <tr>
-                <td rowspan = "2"><img src= "img/room.jpg" /></td>
+                <td rowspan = "2"><img src= "../img/space.jpg" /></td>
                 <td rowspan = "2">홍대파티룸 임팩트<br>
-                일정 1일(2021-11-12)<br>
-                150,000원</td>
+                150,000원(최대 8인)</td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td><button class="btn btn-primary d-flex justify-content-end" type="button" onclick="location.href='infoRevise.html'">정보 수정</button><br>
                     <button class="btn btn-primary d-flex justify-content-end" type="button" data-bs-toggle="modal" data-bs-target="#Modal">등록 취소</button>
-                    <!-- Modal -->
+                    <!-- Modal 에 대한 것이지만, 정확하게 없애는 방법?-->
        
                 <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">파티풀 내용:</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">파티풀 내용:</h5>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -74,13 +75,14 @@
 
                 </td>
                 </tr>
-            </table><br>
+                
+            </table>
             <table class ="imgsertoku" align="center" id = "room2">
                 <tr>
-                <td rowspan = "2"><img src= "img/space.jpg" /></td>
+                <td rowspan = "2"><img src= "../img/room.jpg" /></td>
                 <td rowspan = "2">신촌파티룸 노임팩트<br>
-                일정 1일(2021-11-15)<br>
-                110,000원</td>
+                
+                110,000원(최대 4인)</td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td><button class="btn btn-primary d-flex justify-content-end" type="button" onclick="location.href='infoRevise.html'">정보 수정</button><br>
                     <button class="btn btn-primary d-flex justify-content-end" type="button" data-bs-toggle="modal" data-bs-target="#Modal">등록 취소</button>
@@ -92,15 +94,14 @@
         <br>
         
 
-        <div class="d-flex justify-content-between">
-            <button class="btn btn-primary" type="button">이전 가기</button>
+        <div class="d-flex justify-content-end">
             <button class="btn btn-primary" type="button" onclick="location.href='hostRegister.html'">등록 하기</button>
           </div>
 
     </div>
 
-    <script src="js/scripts.js"></script>
-
+    <script async src="../js/scripts.js"></script>
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
