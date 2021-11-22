@@ -5,6 +5,8 @@ import com.se.partypool.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.ui.Model
+import java.io.PrintWriter
+import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
 @Service
@@ -27,37 +29,55 @@ class UserService(
     }
 
     //로그인 기능
-    fun login(id: String, pw: String, type: String,
-              model: Model, session: HttpSession
+    fun login(id: String, pw: String, type: String?,
+              model: Model, session: HttpSession, httpServletResponse: HttpServletResponse
     ):String {
         val dbUser = userRepo.findByUserId(id)
         var page=""
         if(dbUser != null){
             if(pw.equals(dbUser.userPw)){
-                if(type.equals(dbUser.userType)){
-                    session.setAttribute("userId", dbUser.userId)
-                    session.setAttribute("userType", dbUser.userType)
-                    model.addAttribute("title","logout")
-                    println("로그인 성공 "+session.getAttribute("userId"))
-                    page= "testLogout.html"
+                if(type.equals(dbUser.userType)) {
+                    if (type.equals("호스트")) { //type = 호스트
+                        session.setAttribute("userId", dbUser.userId)
+                        session.setAttribute("userType", dbUser.userType)
+                        model.addAttribute("title", "host")
+                        println("호스트 로그인 성공 " + session.getAttribute("userId"))
+                        page = "host"
+                    } else { //type = 회원
+                        session.setAttribute("userId", dbUser.userId)
+                        session.setAttribute("userType", dbUser.userType)
+                        model.addAttribute("title", "logout")
+                        println("회원 로그인 성공 " + session.getAttribute("userId"))
+                        page = "testLogout"
+                    }
                 }
-                else{
-                    println("타입이 다릅니다") //type 맞지 않은 경우
-                    page= "testLogin.html"
+                else{   //type 맞지 않은 경우
+                    httpServletResponse.characterEncoding = "UTF-8"
+                    var out:PrintWriter = httpServletResponse.writer
+                    out.println("<script>alert('호스트/회원 타입이 다릅니다.'); </script>")
+                    out.flush()
+                    page= "testLogin"
                 }
             }
-            else {
-                println("비밀번호가 다릅니다") //pw가 맞지 않은 경우
-                page= "testLogin.html"
+            else { //pw 맞지 않은 경우
+                httpServletResponse.characterEncoding = "UTF-8"
+                var out:PrintWriter = httpServletResponse.writer
+                out.println("<script>alert('비밀번호가 다릅니다.'); </script>")
+                out.flush()
+                page= "testLogin"
             }
        }
-        else{
-            println("해당하는 아이디가 없습니다") //id가 맞지 않은 경우
-            page= "testLogin.html"
+        else{ //id가 맞지 않은 경우
+            httpServletResponse.characterEncoding = "UTF-8"
+            var out:PrintWriter = httpServletResponse.writer
+            out.println("<script>alert('해당하는 아이디가 없습니다.'); </script>")
+            out.flush()
+            page= "testLogin"
         }
-
         return page
     }
 
+    fun showHostMain(){
 
+    }
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.*
 import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
 
@@ -15,26 +16,34 @@ class HtmlController {
     private lateinit var userServ: UserService
 
 /**************기능 동작 확인 위한 임시 html*********************/
+
     @RequestMapping("/")    //home
-    fun index(model: Model):String {
+    fun homeForm(model: Model):String {
         model.addAttribute("title", "home")
-        return "testhome.html"
+        return "testhome"
     }
-    @GetMapping("/signup")
-    fun signForm(model: Model):String{
-        model.addAttribute("title","signup")
-        return "testSignUp.html"
+
+    @GetMapping("/{form}")
+    fun pageForm(@PathVariable form:String,
+                 httpServletRequest: HttpServletRequest):String{
+        var resp:String = ""
+        if(form.equals("signup")){
+            resp = "testSignUp"
+        }
+        else if(form.equals("login")){
+            resp = "testLogin"
+        }
+        else if(form.equals("hostRegister")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "hostRegister"
+        }
+        else if(form.equals("infoRevise")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "infoRevise"
+        }
+        return resp
     }
-    @GetMapping("/login")
-    fun loginForm(model: Model):String {
-        model.addAttribute("title", "login")
-        return "testLogin.html"
-    }
-    @GetMapping("/logout")
-    fun logout(model: Model):String{
-        model.addAttribute("title","logout")
-        return "testLogout.html"
-    }
+
 /**************기능 동작 확인 위한 임시 html*********************/
 
     //회원가입
@@ -51,7 +60,7 @@ class HtmlController {
         }
 
         model.addAttribute("title","home")
-        return "testhome.html"
+        return "testhome"
     }
 
     //로그인
@@ -59,13 +68,14 @@ class HtmlController {
     fun postLogin(
         model: Model,
         session: HttpSession,
+        httpServletResponse: HttpServletResponse,
         @RequestParam(value="user_ID") id:String,
         @RequestParam(value="user_PW1") password:String,
-        @RequestParam(value="UserType") type:String
+        @RequestParam(value="UserType") type:String?
     ):String{
         var page =""
         try{
-            page = userServ.login(id, password, type, model, session)
+            page = userServ.login(id, password, type, model, session, httpServletResponse)
         }catch (e:Exception){
             e.printStackTrace()
         }
@@ -74,12 +84,13 @@ class HtmlController {
     }
 
     //로그아웃
-    @PostMapping("/logout")
+    @RequestMapping("/logout")
     fun postLogout(model: Model, httpServletRequest: HttpServletRequest):String{
-        var s:HttpSession = httpServletRequest.getSession()
+        var s:HttpSession = httpServletRequest.getSession(false)
+        //println("로그아웃 : "+s.getAttribute("userId"))
         httpServletRequest.getSession(false).invalidate()
 
         model.addAttribute("title","home")
-        return "testhome.html"
+        return "testhome"
     }
 }
