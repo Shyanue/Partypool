@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+    <link rel ="stylesheet" href="style_customer.css"/>
+    <script src="PopUp.js"></script>
+    <style>
+    body{
+        background: #0E0C0A;
+        background-image: url("img/party.png");
+        background-size : cover ;
+        overflow:auto;
+    }
+    #input1{/*로그인 박스*/
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+    }
+    #input2{/*버튼*/
+        position: absolute;
+        right:20%;
+        width: 80px;
+        height: 30px;
+        border-radius: 10px;
+        background: lightgray;
+    }
+    </style>
+</head>
+<body>
+    <header0>
+        <nav>
+            <li><a href = "StartPage.html">PARTYPOOL</a></li>
+        </nav>
+    </header0>
+    <header1>
+        <nav>
+            <li><a href = "StartPage.html" style="padding-left:60px;">흠으로</a></li>
+        </nav>
+    </header1>
+    
+</body>
+<container style="height: 500px;left: 100px;right: 100px;">
+<p style="padding-top: 30px;">로그인</p>
+<br><br><br>
+    <div style="float:left; padding-left: 15%;">
+        <img src="img/host.png" alt="Host" width="120" height="120" style="padding-right: 30px;">
+        <img src="img/customer.png" alt="Customer" width="120" height="120"style="padding-left: 30px;">
+        <div style="word-spacing: 140px">
+            <span style="font-size: medium; font-weight: bold;">호스트</span>
+            <span style="font-size: medium;font-weight: bold; padding-right: 7px;">회원</span>
+        </div>
+        <!--Radio Buttons-->
+        <label><input type="radio" name ="UserType" value ="Host" style="margin-right:80px"></label>
+        <label><input type="radio" name ="UserType" value ="Customer"style="margin-left:80px"></label>
+    </div>
+    <div style="float:right; padding-right: 25%">
+        <form name="login" method="post">
+            <input id="input1" type="text" name="user_ID" placeholder="아이디 입력" ><br>
+            <input id="input1" type="password" name="user_PW1" value="123456">
+        </form>
+    </div>
+    <br><br> <br><br><br>
+    <div style="float: right;"></div>
+    <!--로그인성공시-->
+        <a href = "MainPage_Customer.html"><input id="input2" type="button" name="Login"  value="로그인"></a></p>
+        <p style="font-size: medium; position:absolute; right:30%; padding-top: 1%;">아직 회원이 아니신가요?</p>
+        <br><a href = "SignUp.html"><input id="input2" type="button" name="SignUp"  value="회원 가입"></a>
+    </div>
+</container>
+</html>
