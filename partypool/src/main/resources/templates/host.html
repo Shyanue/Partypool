@@ -12,7 +12,10 @@
     <link rel ="stylesheet" href="../static/style.css"/>
     <style>
         body{
-            background-color: black;
+            background: black;
+            background-image : url("../img/party.jpg");
+            background-size : cover;
+            overflow:auto;
         }
     </style>
 </head>
@@ -22,22 +25,59 @@
         <h1 class = "d-flex justify-content-center" href="host.html">PARTYPOOL</h1>
     </div><br>
 
-    <ul id ="nav">
-        <li><a href="#about" style="float:right">로그아웃</a></li>
-    </ul>
+    <header style="display:block;">
+      <nav style="padding-top:2px;">
+          <li style="float:right;"><a href = "#about" style ="padding-right: 65px;">로그아웃</a></li>
+      </nav>
+    </header>
+
     <br><br>
 
-    <div class="big"><!-- 가운데 어떻게 맞추지??-->
+    <div class="big">
         <div class="small" style="clear:both; display: flex; justify-content: center;" >
-            <table class ="imgsertoku" align="center" id="room1">
-                <tr>
-                <td rowspan = "2"><img src= "../img/space.jpg" /></td>
-                <td rowspan = "2">홍대파티룸 임팩트<br>
-                150,000원(최대 8인)</td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><button class="btn btn-primary d-flex justify-content-end" type="button" onclick="location.href='infoRevise.html'">정보 수정</button><br>
-                    <button class="btn btn-primary d-flex justify-content-end" type="button" data-bs-toggle="modal" data-bs-target="#Modal">등록 취소</button>
-                    <!-- Modal 에 대한 것이지만, 정확하게 없애는 방법?-->
+            <div ><p align = "center" style="padding-top: 20px; font-size: bold; font-size:xx-large">호스트께서 보유하신 파티룸입니다</p>
+                <div class="title"></div>
+            
+                <div class ="box1" >
+                    <table align="center" id ="box1">
+                    <tr>
+                        <td style="padding-top: 40px;"><img src= "../img/space.jpg" /></td>
+                        <td rowspan="2" style="padding-left: 40px;"><button class="btn btn-primary d-flex justify-content-end" type="button" onclick="location.href='infoRevise.html'">정보 수정</button><br>
+                            <button class="btn btn-primary d-flex justify-content-end" type="button" data-bs-toggle="modal" data-bs-target="#Modal">등록 취소</button></td>
+                    </tr>
+                    <tr>
+                        <td align="center"> 홍대파티룸 임팩트<br>
+                        150,000원(최대 8인)
+                        </td>
+                    </tr>
+                    
+                 </table>
+            
+
+                 
+                </div>
+
+                <div class = "box2" id ="box2">
+                    <table align="center">
+                        <tr>
+                            <td style="padding-top: 40px;"><img src=  "../img/room.jpg" /></td>
+                            <td rowspan="2" style="padding-left: 40px;"><button class="btn btn-primary d-flex justify-content-end" type="button" onclick="location.href='infoRevise.html'">정보 수정</button><br>
+                                <button class="btn btn-primary d-flex justify-content-end" type="button" data-bs-toggle="modal" data-bs-target="#Modal">등록 취소</button></td>
+                        </tr>
+                        <tr>
+                            <td align="center"> 신촌파티룸 임팩트<br>
+                            110,000원(최대 4인)
+                            </td>
+                        </tr>
+                        
+                     </table>
+                </div>
+    
+            
+            </div>
+           
+
+
        
                 <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -73,28 +113,14 @@
                     </div>
                 </div>
 
-                </td>
-                </tr>
-                
-            </table>
-            <table class ="imgsertoku" align="center" id = "room2">
-                <tr>
-                <td rowspan = "2"><img src= "../img/room.jpg" /></td>
-                <td rowspan = "2">신촌파티룸 노임팩트<br>
-                
-                110,000원(최대 4인)</td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><button class="btn btn-primary d-flex justify-content-end" type="button" onclick="location.href='infoRevise.html'">정보 수정</button><br>
-                    <button class="btn btn-primary d-flex justify-content-end" type="button" data-bs-toggle="modal" data-bs-target="#Modal">등록 취소</button>
-                </td>
-                </tr>
-            </table>
+               
 
         </div>
         <br>
         
 
         <div class="d-flex justify-content-end">
+            <p style="font-size: x-large; font-weight: bold; padding-right: 20px;">등록하고 싶으신 새로운 파티룸이 있으신가요?</p>
             <button class="btn btn-primary" type="button" onclick="location.href='hostRegister.html'">등록 하기</button>
           </div>
 

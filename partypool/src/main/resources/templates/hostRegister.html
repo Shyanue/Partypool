@@ -13,8 +13,11 @@
     <link rel ="stylesheet" href="../static/style.css"/>
     <style>
     body{
-        background-color: black;
-    }
+            background: black;
+            background-image : url("../img/party.jpg");
+            background-size : cover;
+            overflow:auto;
+        }
     </style>
 </head>
 <body>
@@ -22,13 +25,15 @@
     <div id="container">
         <h1 class = "d-flex justify-content-center" onclick="location.href='host.html'">PARTYPOOL</h1>
     </div><br>
-
-    <ul id ="nav">
-        <li><a href="#about"style="float:right">로그아웃</a></li>
-        <li><a href="host.html">홈으로</a></li>
-   
-    </ul>
-    <br><br>
+    <header style="display:block;">
+      <nav style="padding-top:2px;">
+          <li><a href = "host.html" style="padding-left:60px;">흠으로</a></li>
+          <li style="float:right;"><a href = "#about" style ="padding-right: 65px;">로그아웃</a></li>
+      </nav>
+    </header>
+  
+    <br><br> 
+    
 
     <main>
         <form name ="form2" action ="" method="">
@@ -57,13 +62,14 @@
             <div class="border-dee3eb">
                 <h2 id=container class = "d-flex justify-content-center">파티룸 등록</h2>
                       
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-3" style="padding-left: 20px; padding-right: 20px;">
                             <span class="input-group-text" id="basic-addon1">파티룸 이름</span>
                             <input type="text" id = "name" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <br>
+                        </div><br>
+                  
                      
-                        <div> 
+                        <div class="input-group mb-3" style="padding-left:20px; padding-right: 20px;"> 
+                          <span class="input-group-text" id="basic-addon1"> 주소란 </span>
                             <select id="sido">
                               <option value="">시/도</option>
                             </select>
@@ -73,22 +79,21 @@
                             <select id="dong">
                               <option value="">동</option>
                             <input type="text" id = "address" placeholder="상세주소">         
-                        </div>
-
-                        <br><br>
+                        </div><br>
 
 
-                        <div class="input-group mb-3">
+
+                        <div class="input-group mb-3" style="padding-left: 20px; padding-right: 20px;">
                             <span class="input-group-text" id="fee">요금(1일 단위)</span>
                             <input type="text" id = "price" class="form-control" placeholder="원" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
+                        </div><br>
+                        <div class="input-group mb-3" style="padding-left: 20px; padding-right: 20px;">
                             <span class="input-group-text" id="max_number">최대 인원</span>
                             <input type="text" id = "member" class="form-control" placeholder="명" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
-                        <br><br><br><br><br>
+                        <br><br><br><br>
 
-                        <div class="d-flex justify-content-end">
+                        <div class="d-flex justify-content-end" style="padding-right: 20px;">
                             <button class="btn btn-primary" type="submit">등록하기</button>
                        
                         

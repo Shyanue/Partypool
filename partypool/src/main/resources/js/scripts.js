@@ -1,9 +1,10 @@
 function deleteRow(rownum) {
     // table element 찾기
-    const table = document.getElementById('room1');
+    const table = document.getElementById('box1');
     
     // 행(Row) 삭제
     const newRow = table.deleteRow(rownum);
+
   }
 
  jQuery(document).ready(function(){
