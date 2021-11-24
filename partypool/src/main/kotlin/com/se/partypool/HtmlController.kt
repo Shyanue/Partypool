@@ -39,6 +39,10 @@ class HtmlController {
             var session:HttpSession = httpServletRequest.getSession()
             resp = "CheckReservation_Customer"
         }
+        else if(form.equals("host")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "host"
+        }
         else if(form.equals("hostRegister")){
             var session:HttpSession = httpServletRequest.getSession()
             resp = "hostRegister"
