@@ -1,35 +1,18 @@
 #container{
-    font-family: "굴림";
-    font-weight: bold;
-    color: #fff; /*글자 색 지정*/
-    margin-top: 20px;
     
-}
-#nav{
-    list-style: none;
-    height: 60px;
-    padding: 5px 1px;
-    margin:0;
-    background: rgba(66, 63, 63, 0.5);
-}
-#nav li{
-   
-    position: relative;
-    margin: 5px 30px;
-    padding: 0;
-}
-
-#nav li a{
-    display: block;
-    font-family: "굴림";
     font-weight: bold;
-    font-size: 20px;
-    padding: 7px 8px;
-    margin: 0;
     color: #fff; /*글자 색 지정*/
-    margin:0;
-    text-decoration: none; /*글자의 밑줄 없애기*/
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);/* 글자에 그림자 삽입*/
+    margin:  55px;
+    
+    position: relative;
+    color: white;
+    font-size: xxx-large;
+    font-weight: bold;
+    text-shadow: 4px 2px 2px gray;
+    display: flex;
+    justify-content: center;
+
+    
 }
 
 .big { width:1300px; height:700px; background-color:rgba(206, 202, 202, 0.5); 
@@ -50,34 +33,6 @@ margin: auto;
 }
 
 
-
-#wrapper{
- border: 1px solid #ffbb00;
- width: 1054px;
- padding : 10px;
- position: absolute;
- top: 10px;
- left: 50%;
- margin-left: -533px;
- overflow: hidden; 
-   
-}
-
-#contents{
-    width: 550px;
-    float: left;
-    padding: 10px;
-    background-color:rgba(66, 63, 63, 0.5);
-}
-
-#sidebar{
-
-    width: 550px;
-    float: left;
-    padding: 10px;
-    margin-left:10px;
-    background-color:rgba(66, 63, 63, 0.5);
-}
 
 .main-container {
   
@@ -110,3 +65,50 @@ margin: auto;
     flex-direction: column;
     border: none;
   }
+
+    header{ /*헤더바*/
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    height: 60px;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: medium;
+    background:  rgba(66, 63, 63, 0.5);
+    align-items: center;
+}
+
+nav{
+    list-style: none;
+}
+nav li{
+    float: left;
+    
+}
+
+nav li a{
+    z-index: 1;
+    color: white;
+    text-decoration: none;
+}
+
+.box1{
+    float:left;
+    width:400px;
+    height: 300px;
+   
+ 
+}
+.box2{
+    display: inline-block;
+    width: 400px;
+    height: 300px;
+ 
+    margin-left: 70px;
+}
+.title{
+    border-bottom: solid 1px white;
+}
