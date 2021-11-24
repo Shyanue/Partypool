@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>SignUpPage</title>
-    <link rel ="stylesheet" href="style_customer.css"/>
+    <link rel ="stylesheet" href="../css/style_customer.css"/>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="PopUp.js"></script>
     <style>
     body{
         background: #0E0C0A;
-        background-image: url("img/party.png");
+        background-image: url("../img/party.png");
         background-size : cover ;
         overflow:auto;
     }
@@ -39,20 +39,21 @@
 <body>
     <header0>
         <nav>
-            <li><a href = "StartPage.html">PARTYPOOL</a></li>
+            <li><a href = "/">PARTYPOOL</a></li>
         </nav>
     </header0>
     <header1>
         <nav>
-            <li><a href = "StartPage.html" style="padding-left:60px;">흠으로</a></li>
+            <li><a href = "/" style="padding-left:60px;">흠으로</a></li>
         </nav>
     </header1>
 
     <container style="height:800px">
+    <form action="/signup" name="SignUp" method="post">
     <div>
         <p style="padding-top: 20px;">STEP 1 : 당신은 호스트인가요 회원인가요?</p>
-        <img src="img/host.png" alt="Host" width="100" height="100" style="padding-right: 50px;">
-        <img src="img/customer.png" alt="Customer" width="100" height="100"style="padding-left: 50px;">
+        <img src="../img/host.png" alt="Host" width="100" height="100" style="padding-right: 50px;">
+        <img src="../img/customer.png" alt="Customer" width="100" height="100"style="padding-left: 50px;">
         <div style="word-spacing: 165px">
             <span style="font-size: medium; font-weight: bold;">호스트</span>
             <span style="font-size: medium;font-weight: bold; padding-right: 7px;">회원</span>
@@ -66,28 +67,29 @@
         <p>STEP 2 : 아이디와 비밀번호를 입력하세요</p>
         <div style="float:left; text-align:left; padding-left: 35%;">
         <!--form action="로그인 서버 프로그램 url 삽입-->
-            <form name="SignUp" method="post">
+
                 <p style="font-size: medium;">아이디 확인<br>
-                <input class="input1" type="text" id="user_ID" placeholder="아이디 입력" >
+                <input class="input1" type="text" id="user_ID" name="user_ID" placeholder="아이디 입력" >
                 <input class="input2" type="button" id="user_IDcheck" value="아이디 확인">
                 </p>
                 <p style="font-size: medium;">비밀번호<br> 
-                <input class="input1" type="password" id="user_PW1" value="">
+                <input class="input1" type="password" id="user_PW1" name="user_PW1" value="">
                 </p>
                 <p style="font-size: medium;">비밀번호 재확인<br> 
-                <input class="input1" type="password" id="user_PW2" value="">
+                <input class="input1" type="password" id="user_PW2" name="user_PW2" value="">
                 <input class="input2" type="button" id="user_PWcheck" value="비밀번호 재확인" onclick="checkPw();"> 
                 </p>   
-            </form>
+
         </div>
     </div>
     <br><br> <br><br><br><br><br><br><br><br><br><br>
         <p style="font-size: medium;">이미 회원이십니까?
-        <a href = "Login.html"><input class="input3" type="button" id="Login"  value="로그인"></a></p>
+        <a href = "/login"><input class="input3" type="button" id="Login"  value="로그인"></a></p>
         <br>
         <div style="float:right; padding-right: 10%; font-size: large;">
-            <input class="input3" type="button" id="SignUpComplete" value="완료" onclick="signUp();">
+            <input class="input3" type="submit" id="SignUpComplete" value="완료" onclick="signUp();">
         </div>
+    </form>
     </container>
 </body>
 </html>

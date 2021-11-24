@@ -14,6 +14,7 @@ class UserService(
     @Autowired
     private val userRepo: UserRepository
 ) {
+
     // 회원가입 기능
     fun register(id: String, pw: String, type: String?) {
         if(id.isNotBlank()) {
@@ -28,6 +29,7 @@ class UserService(
         else{ println("id 없음") } //id를 입력하지 않은 경우
     }
 
+
     //로그인 기능
     fun login(id: String, pw: String, type: String?,
               model: Model, session: HttpSession, httpServletResponse: HttpServletResponse
@@ -37,7 +39,7 @@ class UserService(
         if(dbUser != null){
             if(pw.equals(dbUser.userPw)){
                 if(type.equals(dbUser.userType)) {
-                    if (type.equals("호스트")) { //type = 호스트
+                    if (type.equals("Host")) { //type = 호스트
                         session.setAttribute("userId", dbUser.userId)
                         session.setAttribute("userType", dbUser.userType)
                         model.addAttribute("title", "host")
@@ -48,7 +50,7 @@ class UserService(
                         session.setAttribute("userType", dbUser.userType)
                         model.addAttribute("title", "logout")
                         println("회원 로그인 성공 " + session.getAttribute("userId"))
-                        page = "testLogout"
+                        page = "MainPage_Customer"
                     }
                 }
                 else{   //type 맞지 않은 경우
@@ -56,7 +58,7 @@ class UserService(
                     var out:PrintWriter = httpServletResponse.writer
                     out.println("<script>alert('호스트/회원 타입이 다릅니다.'); </script>")
                     out.flush()
-                    page= "testLogin"
+                    page= "Login"
                 }
             }
             else { //pw 맞지 않은 경우
@@ -64,7 +66,7 @@ class UserService(
                 var out:PrintWriter = httpServletResponse.writer
                 out.println("<script>alert('비밀번호가 다릅니다.'); </script>")
                 out.flush()
-                page= "testLogin"
+                page= "Login"
             }
        }
         else{ //id가 맞지 않은 경우
@@ -72,7 +74,7 @@ class UserService(
             var out:PrintWriter = httpServletResponse.writer
             out.println("<script>alert('해당하는 아이디가 없습니다.'); </script>")
             out.flush()
-            page= "testLogin"
+            page= "Login"
         }
         return page
     }

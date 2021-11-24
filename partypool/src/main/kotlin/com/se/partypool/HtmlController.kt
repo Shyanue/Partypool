@@ -15,12 +15,10 @@ class HtmlController {
     @Autowired
     private lateinit var userServ: UserService
 
-/**************기능 동작 확인 위한 임시 html*********************/
-
     @RequestMapping("/")    //home
     fun homeForm(model: Model):String {
         model.addAttribute("title", "home")
-        return "testhome"
+        return "StartPage"
     }
 
     @GetMapping("/{form}")
@@ -28,10 +26,18 @@ class HtmlController {
                  httpServletRequest: HttpServletRequest):String{
         var resp:String = ""
         if(form.equals("signup")){
-            resp = "testSignUp"
+            resp = "SignUp"
         }
         else if(form.equals("login")){
-            resp = "testLogin"
+            resp = "Login"
+        }
+        else if(form.equals("mainPageCustomer")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "MainPage_Customer"
+        }
+        else if(form.equals("checkReservCustomer")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "CheckReservation_Customer"
         }
         else if(form.equals("hostRegister")){
             var session:HttpSession = httpServletRequest.getSession()
@@ -44,7 +50,7 @@ class HtmlController {
         return resp
     }
 
-/**************기능 동작 확인 위한 임시 html*********************/
+/****************임시 회원가입 (아이디 중복, 비밀번호 재확인 없음)*********************/
 
     //회원가입
     @PostMapping("/signup",)
@@ -60,8 +66,9 @@ class HtmlController {
         }
 
         model.addAttribute("title","home")
-        return "testhome"
+        return "StartPage"
     }
+/****************임시 회원가입 (아이디 중복, 비밀번호 재확인 없음)*********************/
 
     //로그인
     @PostMapping("/login")
@@ -91,6 +98,6 @@ class HtmlController {
         httpServletRequest.getSession(false).invalidate()
 
         model.addAttribute("title","home")
-        return "testhome"
+        return "StartPage"
     }
 }
