@@ -18,12 +18,12 @@
     }
     
     .input1{/*회원가입 박스*/
-        width: 200px;
+        width: 300px;
         height: 30px;
         border-radius: 5px;
     }
     .input2{/*버튼*/
-        width: 120px;
+        width: 100px;
         height: 35px;
         border-radius: 5px;
         background: lightgray;
@@ -65,18 +65,16 @@
         <br>
         <p>STEP 2 : 아이디와 비밀번호를 입력하세요</p>
         <div style="float:left; text-align:left; padding-left: 35%;">
-        <!--form action="로그인 서버 프로그램 url 삽입-->
             <form name="SignUp" method="post">
                 <p style="font-size: medium;">아이디 확인<br>
                 <input class="input1" type="text" id="user_ID" placeholder="아이디 입력" >
-                <input class="input2" type="button" id="user_IDcheck" value="아이디 확인">
                 </p>
                 <p style="font-size: medium;">비밀번호<br> 
-                <input class="input1" type="password" id="user_PW1" value="">
+                <input class="input1" type="password" id="user_PW1" placeholder="비밀번호 입력">
                 </p>
                 <p style="font-size: medium;">비밀번호 재확인<br> 
-                <input class="input1" type="password" id="user_PW2" value="">
-                <input class="input2" type="button" id="user_PWcheck" value="비밀번호 재확인" onclick="checkPw();"> 
+                <input class="input1" type="password" id="user_PW2" placeholder="비밀번호 재입력">
+                <input class="input2" type="button" id="user_PWcheck" value="비밀번호 확인" onclick="checkPw();"> 
                 </p>   
             </form>
         </div>
