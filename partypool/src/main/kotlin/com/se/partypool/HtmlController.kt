@@ -1,56 +1,115 @@
 package com.se.partypool
 
 import com.se.partypool.service.UserService
-import com.se.partypool.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
-import java.security.MessageDigest
 import org.springframework.ui.Model
+import org.springframework.web.bind.annotation.*
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
+
 
 @Controller
 class HtmlController {
     @Autowired
     private lateinit var userServ: UserService
-    private lateinit var userRepo: UserRepository
 
-    @RequestMapping("/")
-    fun test(){
-        userServ.register("Admin", "1234", "Guest")
+    @RequestMapping("/")    //home
+    fun homeForm(model: Model):String {
+        model.addAttribute("title", "home")
+        return "StartPage"
     }
 
-    fun crypto(ss:String):String{
-        val sha=MessageDigest.getInstance("SHA-256")
-        val hexa=sha.digest(ss.toByteArray())
-        val crypto_str=hexa.fold("",{str, it -> str + "%02x".format(it)})
-        return crypto_str
-    }
-    @RequestMapping("/signin")
-    fun signin(model: Model,
-                @RequestParam(value="id") userId:String,
-                @RequestParam(value="pw") password:String,
-                @RequestParam(value="type") userType:String):String{
-
-        val db_ids=userRepo.findbyUserId(userId)
-        if(db_ids!=null){
-            println("해당 아이디가 이미 존재합니다.")
-            return "SignUp.html"
+    @GetMapping("/{form}")
+    fun pageForm(@PathVariable form:String,
+                 httpServletRequest: HttpServletRequest):String{
+        var resp:String = ""
+        if(form.equals("signup")){
+            resp = "SignUp"
         }
+        else if(form.equals("login")){
+            resp = "Login"
+        }
+        else if(form.equals("mainPageCustomer")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "MainPage_Customer"
+        }
+        else if(form.equals("checkReservCustomer")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "CheckReservation_Customer"
+        }
+        else if(form.equals("host")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "host"
+        }
+        else if(form.equals("hostRegister")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "hostRegister"
+        }
+        else if(form.equals("infoRevise")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "infoRevise"
+        }
+        return resp
+    }
 
+    /****************임시 회원가입 (아이디 중복, 비밀번호 재확인 없음)*********************/
+
+    //회원가입
+    @PostMapping("/signup",)
+    fun postSignUp(model: Model, httpServletResponse: HttpServletResponse,
+                   @RequestParam("user_ID") id:String,
+                   @RequestParam("user_PW1") password:String,
+                   @RequestParam("user_PW2") passwordcheck:String,
+                   @RequestParam("UserType") type:String?
+    ):String{
+        var page=""
+        userServ.idcheck(id, httpServletResponse)
+        userServ.pwcheck(password, passwordcheck, httpServletResponse)
+        if(userServ.resultcheck()){
+            try {
+                page=userServ.register(id, password, type)
+            }catch(e:Exception){
+                e.printStackTrace()
+            }
+        }
+        else{
+            page="SignUp"
+        }
+        model.addAttribute("title","home")
+        return page
+    }
+    /****************임시 회원가입 (아이디 중복, 비밀번호 재확인 없음)*********************/
+
+    //로그인
+    @PostMapping("/login")
+    fun postLogin(
+        model: Model,
+        session: HttpSession,
+        httpServletResponse: HttpServletResponse,
+        @RequestParam(value="user_ID") id:String,
+        @RequestParam(value="user_PW1") password:String,
+        @RequestParam(value="UserType") type:String?
+    ):String{
+        var page =""
         try{
-            val cryptopw=crypto(password)
-            userServ.register(userId, cryptopw, userType)
+            page = userServ.login(id, password, type, model, session, httpServletResponse)
         }catch (e:Exception){
             e.printStackTrace()
         }
-        return "signin"
+
+        return page
     }
+
+    //로그아웃
     @RequestMapping("/logout")
-    fun logout(model: Model, session:HttpSession):String{
-        session.invalidate()
-        println("정상적으로 로그아웃 되었습니다.")
-        return "StartPage.html"
+    fun postLogout(model: Model, httpServletRequest: HttpServletRequest):String{
+        var s:HttpSession = httpServletRequest.getSession(false)
+        //println("로그아웃 : "+s.getAttribute("userId"))
+        httpServletRequest.getSession(false).invalidate()
+
+        model.addAttribute("title","home")
+        return "StartPage"
     }
 }
