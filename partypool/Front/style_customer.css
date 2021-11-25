@@ -1,4 +1,3 @@
-
 header0{/*header 1을 위한 PARTYPOOL 상단 글씨*/
     color: white;
     font-size: xxx-large;
@@ -66,7 +65,7 @@ mainPageBox{/*시작화면, 회원 메인화면 박스 / container1 종속*/
     background: rgba(66, 63, 63, 0.5);
 }
 
-.selectionBox{/*지역 찾기*/
+.selectionBox{/*select 형식 박스*/
     position: relative;
     display: inline;
     top: 50px;
@@ -105,9 +104,3 @@ map{/*지역 옆 지도*/
     padding-top: 5px;
 }
 
-descriptionBox{/*파티룸 정보란*/
-
-}
-reservationBox{/*예약정보 입력란*/
-
-}
