@@ -1,0 +1,114 @@
+#container{
+    
+    font-weight: bold;
+    color: #fff; /*글자 색 지정*/
+    margin:  55px;
+    
+    position: relative;
+    color: white;
+    font-size: xxx-large;
+    font-weight: bold;
+    text-shadow: 4px 2px 2px gray;
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+.big { width:1300px; height:700px; background-color:rgba(206, 202, 202, 0.5); 
+margin:auto; padding:50px;
+}
+
+.small { width:auto; height: 550px; background-color:rgba(66, 63, 63, 0.5); 
+margin: auto;
+}
+
+.small2 { width:600px; height: 230px; background-color:rgba(66, 63, 63, 0.5); 
+    }
+.small3 { width:500px; height: 230px; background-color:rgba(66, 63, 63, 0.5); 
+    }
+.imgsertoku{
+    float:left; margin-right: 20px; margin-top: 20px; margin-left:20px; clear:both;
+    vertical-align: middle; 
+}
+
+
+
+.main-container {
+  
+    margin: auto;
+    display: grid;
+    grid-template-columns: 680px 330px;
+    grid-template-rows: 120px 310px 890px 130px;
+    gap: 10px; /* 구역간의 간격 */
+    background-color:rgba(206, 202, 202, 0.5);
+    width:1300px; height:700px; 
+    margin:auto; padding:50px;
+  }
+
+  
+  .temp-box {
+   
+   
+    font-size: 15px;
+    border: 1px solid black;
+    text-align: center;
+    width:500px; height: 600px; background-color:rgba(66, 63, 63, 0.5);
+  }
+  .box-three {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    border: none; /* border를 지우고 3-1과 3-2에 각각 border를 적용해줍니다. */
+  }
+  .box-four {
+    display: flex;
+    flex-direction: column;
+    border: none;
+  }
+
+    header{ /*헤더바*/
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    height: 60px;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: medium;
+    background:  rgba(66, 63, 63, 0.5);
+    align-items: center;
+}
+
+nav{
+    list-style: none;
+}
+nav li{
+    float: left;
+    
+}
+
+nav li a{
+    z-index: 1;
+    color: white;
+    text-decoration: none;
+}
+
+.box1{
+    float:left;
+    width:400px;
+    height: 300px;
+   
+ 
+}
+.box2{
+    display: inline-block;
+    width: 400px;
+    height: 300px;
+ 
+    margin-left: 70px;
+}
+.title{
+    border-bottom: solid 1px white;
+}
