@@ -1,4 +1,4 @@
-package com.se.partypool
+package com.se.partypool.controller
 
 import com.se.partypool.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
 
-
 @Controller
-class HtmlController {
+class MainController {
     @Autowired
     private lateinit var userServ: UserService
 

@@ -1,4 +1,4 @@
-package com.se.partypool.repository
+package com.se.partypool.entity
 
 import javax.persistence.*
 
