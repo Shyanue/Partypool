@@ -12,21 +12,70 @@ import javax.servlet.http.HttpSession
 @Service
 class UserService(
     @Autowired
-    private val userRepo: UserRepository
+    private val userRepo: UserRepository,
+    var idcheck_result:Boolean=true,
+    var pwcheck_result:Boolean=true
 ) {
 
     // 회원가입 기능
-    fun register(id: String, pw: String, type: String?) {
+    fun register(id: String, pw: String, type: String?, httpServletResponse: HttpServletResponse):String {
+        var page=""
+        httpServletResponse.characterEncoding="UTF-8"
+        var out:PrintWriter=httpServletResponse.writer
         if(id.isNotBlank()) {
             if(pw.isNotBlank()) {
                 if(!type.isNullOrBlank()) {
                     userRepo.save(User(userId = id, userPw = pw, userType = type))
+                    page="StartPage"
                 }
-                else{ println("type 없음")  } //type 선택하지 않은 경우
+                else{
+                    out.println("<script>alert('타입을 선택해주세요.'); </script>")
+                    out.flush()
+                    page="SignUp"
+                } //type 선택하지 않은 경우
             }
-            else{ println("pw 없음")  } //pw를 입력하지 않은 경우
+            else{
+                out.println("<script>alert('비밀번호를 입력해주세요.'); </script>")
+                out.flush()
+                page="SignUp"
+            } //pw를 입력하지 않은 경우
         }
-        else{ println("id 없음") } //id를 입력하지 않은 경우
+        else{
+            out.println("<script>alert('아이디를 입력해주세요.'); </script>")
+            out.flush()
+            page="SignUp"
+        } //id를 입력하지 않은 경우
+
+        return page
+    }
+    fun idcheck(id:String, httpServletResponse: HttpServletResponse){
+        val dbUser=userRepo.findByUserId(id)
+        if(dbUser!=null){
+            httpServletResponse.characterEncoding = "UTF-8"
+            var out:PrintWriter = httpServletResponse.writer
+            out.println("<script>alert('해당 아이디는 이미 존재합니다.'); </script>")
+            out.flush()
+            idcheck_result=false
+        }
+    }
+    fun pwcheck(pw1:String, pw2:String, httpServletResponse: HttpServletResponse){
+        if(!pw1.equals(pw2)){
+            httpServletResponse.characterEncoding = "UTF-8"
+            var out:PrintWriter = httpServletResponse.writer
+            out.println("<script>alert('비밀번호가 일치하지 않습니다.'); </script>")
+            out.flush()
+            pwcheck_result=false
+        }
+    }
+    fun resultcheck():Boolean{
+        var totalresult=false
+        if(idcheck_result&&pwcheck_result){
+            totalresult=true
+        }
+        else{
+            totalresult=false
+        }
+        return totalresult
     }
 
     //로그인 기능
