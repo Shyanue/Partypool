@@ -6,6 +6,15 @@ function deleteRow(rownum) {
     const newRow = table.deleteRow(rownum);
 
   }
+  
+  function deleteRow2(rownum) {
+    // table element 찾기
+    const table = document.getElementById('box2');
+    
+    // 행(Row) 삭제
+    const newRow = table.deleteRow(rownum);
+
+  }
 
  jQuery(document).ready(function(){
     //sido option 추가
