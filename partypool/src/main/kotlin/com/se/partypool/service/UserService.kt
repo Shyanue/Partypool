@@ -1,6 +1,6 @@
 package com.se.partypool.service
 
-import com.se.partypool.repository.User
+import com.se.partypool.entity.User
 import com.se.partypool.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -28,7 +28,6 @@ class UserService(
         }
         else{ println("id 없음") } //id를 입력하지 않은 경우
     }
-
 
     //로그인 기능
     fun login(id: String, pw: String, type: String?,
