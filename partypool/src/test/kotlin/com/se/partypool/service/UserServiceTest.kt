@@ -35,7 +35,7 @@ class UserServiceTest{
         }returns user
 
         //when
-        userServ.register(id, pw, type)
+        userServ.register(id, pw, type, response)
 
         //then
         verify{ userRepo.save(any()) }
@@ -55,7 +55,7 @@ class UserServiceTest{
         //when
         var isThrownException = false
         try{
-            userServ.register(id, pw, type)
+            userServ.register(id, pw, type, response)
         }catch(e: Exception){
             isThrownException = true
         }
@@ -79,7 +79,7 @@ class UserServiceTest{
         //when
         var isThrownException = false
         try{
-            userServ.register(id, pw, type)
+            userServ.register(id, pw, type, response)
         }catch(e: Exception){
             isThrownException = true
         }
@@ -103,7 +103,7 @@ class UserServiceTest{
         //when
         var isThrownException = false
         try{
-            userServ.register(id, pw, type)
+            userServ.register(id, pw, type, response)
         }catch(e: Exception){
             isThrownException = true
         }
@@ -127,7 +127,7 @@ class UserServiceTest{
         //when
         var isThrownException = false
         try{
-            userServ.register(id, pw, type)
+            userServ.register(id, pw, type, response)
         }catch(e: Exception){
             isThrownException = true
         }

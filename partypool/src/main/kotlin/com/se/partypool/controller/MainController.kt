@@ -57,21 +57,28 @@ class MainController {
 
     //회원가입
     @PostMapping("/signup",)
-    fun postSignUp(model: Model,
-        @RequestParam("user_ID") id:String,
-        @RequestParam("user_PW1") password:String,
-        @RequestParam("UserType") type:String?
+    fun postSignUp(model: Model, httpServletResponse: HttpServletResponse,
+                   @RequestParam("user_ID") id:String,
+                   @RequestParam("user_PW1") password:String,
+                   @RequestParam("user_PW2") passwordcheck:String,
+                   @RequestParam("UserType") type:String?
     ):String{
-        try {
-            userServ.register(id, password, type)
-        }catch(e:Exception){
-            e.printStackTrace()
+        var page=""
+        userServ.idcheck(id, httpServletResponse)
+        userServ.pwcheck(password, passwordcheck, httpServletResponse)
+        if(userServ.resultcheck()){
+            try {
+                page=userServ.register(id, password, type, httpServletResponse)
+            }catch(e:Exception){
+                e.printStackTrace()
+            }
         }
-
+        else{
+            page="SignUp"
+        }
         model.addAttribute("title","home")
-        return "StartPage"
+        return page
     }
-/****************임시 회원가입 (아이디 중복, 비밀번호 재확인 없음)*********************/
 
     //로그인
     @PostMapping("/login")
