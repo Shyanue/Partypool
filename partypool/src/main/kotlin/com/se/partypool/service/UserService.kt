@@ -69,12 +69,7 @@ class UserService(
     }
     fun resultcheck():Boolean{
         var totalresult=false
-        if(idcheck_result&&pwcheck_result){
-            totalresult=true
-        }
-        else{
-            totalresult=false
-        }
+        totalresult = idcheck_result&&pwcheck_result
         return totalresult
     }
 
