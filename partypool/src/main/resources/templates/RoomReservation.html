@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RoomReservation</title>
+    <link rel ="stylesheet" href="static/style_customer.css"/>
+    <style>
+    body{
+        background: #0E0C0A;
+        background-image: url("static/img/party.png");
+        background-size : cover ;
+        overflow:auto;
+    }
+    #input2{/*버튼*/
+        position: absolute;
+        right:20%;
+        width: 80px;
+        height: 30px;
+        border-radius: 10px;
+        background: lightgray;
+    }
+    pic{
+        background:  rgba(66, 63, 63, 0.5);
+        float:left;
+        position:absolute;
+        height: 41%;
+        top: 80px;
+        left: 30px;
+        width: 49%;
+        align-items: center;
+        justify-content: center;
+    }
+    detailsBox{/*파티룸 상세정보*/
+        background:  rgba(66, 63, 63, 0.5);
+        float:left;
+        position:absolute;
+        height: 41%;
+        top: 55%;
+        left: 30px;
+        width: 49%;
+        align-items: center;
+        justify-content: center;
+    }
+    reservationBox{/*파티룸 예약*/
+        background:  rgba(66, 63, 63, 0.5);
+        float:right;
+        position:absolute;
+        height: 87%;
+        top: 80px;
+        right: 30px;
+        width: 43%;
+        align-items: center;
+    }
+    </style>
+</head>
+<body>
+
+    <header0>
+        <nav>
+            <li><a href = "StartPage.html">PARTYPOOL</a></li>
+        </nav>
+    </header0>
+    <header1 style="display:block;">
+        <nav style="padding-top:2px;">
+            <li><a href = "StartPage.html" style="padding-left:60px;">흠으로</a></li>
+            <li><a href = "CheckReservation_Customer.html" style="padding-left:60px;">예약 확인</a></li>
+            <li style="float:right;"><a href = "StartPage.html" style ="padding-right: 65px;">로그아웃</a></li>
+        </nav>
+    </header1>
+    <container style="left: 50px;right: 50px; height:900px">
+        <button id="input2" type="button" style="float:left; left:30px; top: 20px">
+            <a href="PartyRoomList.html" style="text-decoration: none; color: black;">이전으로</a>
+        </button>
+        <pic>
+            방사진
+        </pic>
+        <detailsBox>
+            <p style="color:white; top: 20px; font-size: x-large;">방 이름</p>
+            <div class="selectionBox" style="top:12px;width: 88%;height: 65%; overflow:auto;overflow-x:hidden;">
+                <p style="top: 20px; font-weight: normal;font-size: large; float:left; padding-left: 20px; padding-right: 20px;">
+                 호스트가 저장한 방 세부 설명을 적는 칸
+                내용이 많아지면 자동으로 스크롤 생성</p>
+            </div>
+        </detailsBox>
+        <reservationBox>
+            <p style="color:white; top: 30px;">예약 정보</p>
+             <!--인원수 선택받기-->
+             <select id="NoOfVisitors" class="selectionBox" style="font-size:medium; top: 20px; width: 41%;font-weight:bold;">
+                <option selected> 인원수 </option>
+                <option value="1ppl">1명</option>
+                <option value="2ppl">2명</option>                
+                <option value="3ppl">3명</option>
+                <option value="4ppl">4명</option>
+                <option value="5ppl">5명</option>
+                <option value="6ppl">6명</option>
+                <option value="7ppl">7명</option>
+                <option value="8ppl">8명</option>
+                <option value="9ppl">9명</option>
+                <option value="10ppl">10명</option>
+                <option value="11ppl">11명</option>
+                <option value="12ppl">12명</option>
+                <option value="13ppl">13명</option>
+                <option value="14ppl">14명</option>
+                <option value="15ppl">15명</option>
+                <option value="16ppl">16명</option>
+                <option value="17ppl">17명</option>
+                <option value="18ppl">18명</option>
+                <option value="19ppl">19명</option>
+                <option value="20ppl">20명</option>
+                <option value="moreThan20ppl">20명 초과(메세지 창에 기입)</option>
+            </select>
+             <!--날짜 선택받기-->
+             <input type="date" class="selectionBox" style="width: 41%;top:18px;font-weight:bold;">
+
+            <!--호스트가 설정한 요금세부 정부에 대한 정보-->
+            <div class="selectionBox" style="width: 85%; height: 23%; overflow:auto;">
+                <p style="font-size: large;">요금 세부 정보</p>
+            </div>
+            <!--환불 정책에 대한 정보-->
+            <div class="selectionBox" style="width: 85%; height: 23%;margin-top: 30px; overflow:auto;">
+                <p style="font-size: large;">환불 정책</p>
+            </div>
+
+            <!--호스트에게 메세지창-->
+            <input type="text" class="selectionBox" placeholder="호스트에게 전달사항이 있으시다면 메세지를 입력해주세요!"style="width: 85%; height: 12%;
+            margin-top: 30px; overflow:auto;text-align:center;">
+        
+            <button id="input2" type="button"  style="float:right; right:30px; bottom: 20px">
+                <a href="Payment.html" style="text-decoration: none; color: black;">예약하기</a>
+            </button>
+        </reservationBox>
+    </container>
+</body>
+</html>
