@@ -38,6 +38,18 @@ class MainController {
             var session:HttpSession = httpServletRequest.getSession()
             resp = "CheckReservation_Customer"
         }
+        else if(form.equals("partyRoom")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "PartyRoomList"
+        }
+        else if(form.equals("payment")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "Payment"
+        }
+        else if(form.equals("roomReserv")){
+            var session:HttpSession = httpServletRequest.getSession()
+            resp = "RoomReservation"
+        }
         else if(form.equals("host")){
             var session:HttpSession = httpServletRequest.getSession()
             resp = "host"
