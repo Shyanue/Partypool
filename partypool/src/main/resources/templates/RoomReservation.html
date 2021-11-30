@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>RoomReservation</title>
-    <link rel ="stylesheet" href="../static/style_customer.css"/>
+    <link rel ="stylesheet" href="../css/style_customer.css"/>
     <style>
     body{
         background: #0E0C0A;
-        background-image: url("../static/img/party.png");
+        background-image: url("../img/party.png");
         background-size : cover ;
         overflow:auto;
     }
@@ -60,19 +60,19 @@
 
     <header0>
         <nav>
-            <li><a href = "StartPage.html">PARTYPOOL</a></li>
+            <li><a href = "/">PARTYPOOL</a></li>
         </nav>
     </header0>
     <header1 style="display:block;">
         <nav style="padding-top:2px;">
-            <li><a href = "StartPage.html" style="padding-left:60px;">흠으로</a></li>
-            <li><a href = "CheckReservation_Customer.html" style="padding-left:60px;">예약 확인</a></li>
-            <li style="float:right;"><a href = "StartPage.html" style ="padding-right: 65px;">로그아웃</a></li>
+            <li><a href = "/" style="padding-left:60px;">흠으로</a></li>
+            <li><a href = "/checkReservCustomer" style="padding-left:60px;">예약 확인</a></li>
+            <li style="float:right;"><a href = "/" style ="padding-right: 65px;">로그아웃</a></li>
         </nav>
     </header1>
     <container style="left: 50px;right: 50px; height:900px">
         <button id="input2" type="button" style="float:left; left:30px; top: 20px">
-            <a href="PartyRoomList.html" style="text-decoration: none; color: black;">이전으로</a>
+            <a href="/partyRoom" style="text-decoration: none; color: black;">이전으로</a>
         </button>
         <pic>
             방사진
@@ -129,7 +129,7 @@
             margin-top: 30px; overflow:auto;text-align:center;">
         
             <button id="input2" type="button"  style="float:right; right:30px; bottom: 20px">
-                <a href="Payment.html" style="text-decoration: none; color: black;">예약하기</a>
+                <a href="/payment" style="text-decoration: none; color: black;">예약하기</a>
             </button>
         </reservationBox>
     </container>
