@@ -26,7 +26,7 @@
     </div><br>
 
     <header style="display:block;">
-      <nav style="padding-top:2px;">
+      <nav>
           <li style="float:right;"><a href = "/logout" style ="padding-right: 65px;">로그아웃</a></li>
       </nav>
     </header>
@@ -35,7 +35,7 @@
 
     <div class="big">
         <div class="small" style="clear:both; display: flex; justify-content: center;" >
-            <div ><p align = "center" style="padding-top: 20px; font-size: bold; font-size:xx-large">호스트께서 보유하신 파티룸입니다</p>
+            <div ><p align = "center" style="padding-top: 30px; font-weight: bold; font-size:xx-large">호스트께서 보유하신 파티룸입니다</p>
                 <div class="title"></div>
             
                 <div class ="box1" >
@@ -45,7 +45,7 @@
                             홍대파티룸 임팩트<br>
                             150,000원(최대 8인)
                         </td>
-                        <td rowspan="2" style="padding-left: 40px;"><button class="btn btn-primary d-flex justify-content-end" type="button" onclick="location.href='infoRevise'">정보 수정</button><br>
+                        <td rowspan="2" style="padding-left: 40px;"><button class="btn btn-primary d-flex justify-content-end" type="button" onclick="location.href='/infoRevise'">정보 수정</button><br>
                             <button class="btn btn-primary d-flex justify-content-end" type="button" data-bs-toggle="modal" data-bs-target="#Modal">등록 취소</button></td>
                         </tr>
                     
@@ -62,7 +62,7 @@
                                 신촌파티룸 임팩트<br>
                                 110,000원(최대 4인)
                             </td>
-                            <td rowspan="2" style="padding-left: 40px;"><button class="btn btn-primary d-flex justify-content-end" type="button" onclick="location.href='infoRevise'">정보 수정</button><br>
+                            <td rowspan="2" style="padding-left: 40px;"><button class="btn btn-primary d-flex justify-content-end" type="button" onclick="location.href='/infoRevise'">정보 수정</button><br>
                                 <button class="btn btn-primary d-flex justify-content-end" type="button" data-bs-toggle="modal" data-bs-target="#Modal2">등록 취소</button></td>
                             </tr>             
                      </table>
@@ -149,8 +149,8 @@
         
 
         <div class="d-flex justify-content-end">
-            <p style="font-size: x-large; font-weight: bold; padding-right: 20px;">등록하고 싶으신 새로운 파티룸이 있으신가요?</p>
-            <button class="btn btn-primary" type="button" onclick="location.href='hostRegister'">등록 하기</button>
+            <p style="margin-top: 10px;font-size: x-large; font-weight: bold; padding-right: 20px;">등록하고 싶으신 새로운 파티룸이 있으신가요?</p>
+            <button class="btn btn-primary" type="button"  onclick=" location.href='/hostRegister'">등록 하기</button>
           </div>
 
     </div>
