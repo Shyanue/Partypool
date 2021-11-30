@@ -34,11 +34,14 @@ class UserServiceTest{
             userRepo.save(any())
         }returns user
 
+        val expectedPage = "StartPage"
+
         //when
-        userServ.register(id, pw, type, response)
+        val acturalPage = userServ.register(id, pw, type, response)
 
         //then
         verify{ userRepo.save(any()) }
+        assertEquals(expectedPage, acturalPage)
     }
 
     @Test
@@ -52,10 +55,14 @@ class UserServiceTest{
             userRepo.save(any())
         }throws(Exception("Can't Saved"))
 
+        val expectedPage = "SignUp"
+
         //when
+        var actualPage = ""
+
         var isThrownException = false
         try{
-            userServ.register(id, pw, type, response)
+            actualPage = userServ.register(id, pw, type, response)
         }catch(e: Exception){
             isThrownException = true
         }
@@ -63,6 +70,7 @@ class UserServiceTest{
         //then
         assertFalse(isThrownException)
         verify(exactly = 0){ userRepo.save(any()) }
+        assertEquals(expectedPage, actualPage)
     }
 
     @Test
@@ -76,10 +84,14 @@ class UserServiceTest{
             userRepo.save(any())
         }throws(Exception("Can't Saved"))
 
+        val expectedPage = "SignUp"
+
         //when
+        var actualPage = ""
+
         var isThrownException = false
         try{
-            userServ.register(id, pw, type, response)
+            actualPage = userServ.register(id, pw, type, response)
         }catch(e: Exception){
             isThrownException = true
         }
@@ -87,6 +99,7 @@ class UserServiceTest{
         //then
         assertFalse(isThrownException)
         verify(exactly = 0){ userRepo.save(any()) }
+        assertEquals(expectedPage, actualPage)
     }
 
     @Test
@@ -100,10 +113,14 @@ class UserServiceTest{
             userRepo.save(any())
         }throws(Exception("Can't Saved"))
 
+        val expectedPage = "SignUp"
+
         //when
+        var actualPage = ""
+
         var isThrownException = false
         try{
-            userServ.register(id, pw, type, response)
+            actualPage = userServ.register(id, pw, type, response)
         }catch(e: Exception){
             isThrownException = true
         }
@@ -111,6 +128,7 @@ class UserServiceTest{
         //then
         assertFalse(isThrownException)
         verify(exactly = 0){ userRepo.save(any()) }
+        assertEquals(expectedPage, actualPage)
     }
 
     @Test
@@ -124,10 +142,14 @@ class UserServiceTest{
             userRepo.save(any())
         }throws(Exception("Can't Saved"))
 
+        val expectedPage = "SignUp"
+
         //when
+        var actualPage = ""
+
         var isThrownException = false
         try{
-            userServ.register(id, pw, type, response)
+            actualPage = userServ.register(id, pw, type, response)
         }catch(e: Exception){
             isThrownException = true
         }
@@ -135,6 +157,7 @@ class UserServiceTest{
         //then
         assertFalse(isThrownException)
         verify(exactly = 0){ userRepo.save(any()) }
+        assertEquals(expectedPage, actualPage)
     }
 
     @Test
