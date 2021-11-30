@@ -7,7 +7,6 @@
     position: relative;
     color: white;
     font-size: xxx-large;
-    font-weight: bold;
     text-shadow: 4px 2px 2px gray;
     display: flex;
     justify-content: center;
@@ -15,8 +14,8 @@
     
 }
 
-.big { width:1300px; height:700px; background-color:rgba(206, 202, 202, 0.5); 
-margin:auto; padding:50px;
+.big { position: absolute;left: 90px; right: 90px;height:700px; background-color:rgba(206, 202, 202, 0.5); 
+ padding:50px;
 }
 
 .small { width:auto; height: 550px; background-color:rgba(66, 63, 63, 0.5); 
@@ -38,12 +37,12 @@ margin: auto;
   
     margin: auto;
     display: grid;
-    grid-template-columns: 680px 330px;
+    grid-template-columns: 45% 45%;
     grid-template-rows: 120px 310px 890px 130px;
-    gap: 10px; /* 구역간의 간격 */
+    gap: 8%; /* 구역간의 간격 */
     background-color:rgba(206, 202, 202, 0.5);
-    width:1300px; height:700px; 
-    margin:auto; padding:50px;
+    width:90%; height:700px; 
+    padding:50px;
   }
 
   
@@ -66,7 +65,7 @@ margin: auto;
     border: none;
   }
 
-    header{ /*헤더바*/
+header{ /*헤더바*/
     position: absolute;
     top: 130px;
     left: 0;
