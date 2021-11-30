@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>PartyRoomList</title>
-    <link rel ="stylesheet" href="../static/style_customer.css"/>
+    <link rel ="stylesheet" href="../css/style_customer.css"/>
     <style>
     body{
         background: #0E0C0A;
-        background-image: url("../static/img/party.png");
+        background-image: url("../img/party.png");
         background-size : cover ;
         overflow:auto;
     }
@@ -94,14 +94,14 @@
 
     <header0>
         <nav>
-            <li><a href = "StartPage.html">PARTYPOOL</a></li>
+            <li><a href = "/">PARTYPOOL</a></li>
         </nav>
     </header0>
     <header1 style="display:block;">
         <nav style="padding-top:2px;">
-            <li><a href = "StartPage.html" style="padding-left:60px;">흠으로</a></li>
-            <li><a href = "CheckReservation_Customer.html" style="padding-left:60px;">예약 확인</a></li>
-            <li style="float:right;"><a href = "StartPage.html" style ="padding-right: 65px;">로그아웃</a></li>
+            <li><a href = "/" style="padding-left:60px;">흠으로</a></li>
+            <li><a href = "/checkReservCustomer" style="padding-left:60px;">예약 확인</a></li>
+            <li style="float:right;"><a href = "/" style ="padding-right: 65px;">로그아웃</a></li>
         </nav>
     </header1>
     <container>
@@ -153,7 +153,7 @@
         </leftSearchBox>
 
         <button id="input2" type="button" style="float:left; left:30px; bottom: 20px">
-            <a href="MainPage_Customer.html" style="text-decoration: none; color: black;">이전으로</a>
+            <a href="/mainPageCustomer" style="text-decoration: none; color: black;">이전으로</a>
         </button>
          <!--입력받은 정보에 적합한 파티룸 띄우기-->
         <rightSearchBox class="grid" style="overflow:auto;" >
@@ -170,8 +170,8 @@
     
         </rightSearchBox>
         <button class="searchBtn" style="float:right; bottom:20px; right: 30px">
-            <a href="RoomReservation.html">
-                <img src="../static/img/searchIcon.png" width="30px" height="30px">
+            <a href="/roomReserv">
+                <img src="../img/searchIcon.png" width="30px" height="30px">
             </a>
         </button>
     </container>

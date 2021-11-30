@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=6">
 
     <title>StartPage</title>
-    <script src="PopUp.js"></script>
+    <script src="../js/PopUp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> 
-    <link rel ="stylesheet" href="../static/style_customer.css"/>
+    <link rel ="stylesheet" href="../css/style_customer.css"/>
     <style>
         body{ 
             background: #0E0C0A;
-            background-image: url("../static/img/party.png");
+            background-image: url("../img/party.png");
             background-size : cover ;
             overflow:auto;
         }
@@ -26,9 +26,9 @@
     </header0>
     <header1 style="justify-content: center; align-content: center;">
         <nav style="padding-right: 15px; ">
-            <li><a href = "CheckReservation_Customer.html" style="text-align: center;margin: 60px;">예약 확인</a></li>
-            <li><a href = "SignUp.html" style="text-align: center;margin: 60px;">회원 가입</a></li>
-            <li><a href = "Login.html" style="text-align: center;margin: 60px;">로그인</a></li>
+            <li><a href = "/checkReservCustomer" style="text-align: center;margin: 60px;">예약 확인</a></li>
+            <li><a href = "/signup" style="text-align: center;margin: 60px;">회원 가입</a></li>
+            <li><a href = "/login" style="text-align: center;margin: 60px;">로그인</a></li>
         </nav>
     </header1>
   
@@ -147,8 +147,8 @@
                 <option selected> 시/군/구 을(를) 선택하시오</option>
             </select>
             <button class="searchBtn" style="top:260px; right: 30px">
-                <a href="PartyRoomList.html">
-                    <img src="../static/img/searchIcon.png" width="30px" height="30px">
+                <a href="/partyRoom">
+                    <img src="../img/searchIcon.png" width="30px" height="30px">
                 </a>
             </button>
         </mainPageBox>
