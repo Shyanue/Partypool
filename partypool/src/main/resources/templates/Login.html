@@ -46,6 +46,7 @@
 <container style="height: 500px;left: 100px;right: 100px;">
 <p style="padding-top: 30px;">로그인</p>
 <br><br><br>
+    <form name="login" action="/login" method="post">
     <div style="float:left; padding-left: 15%;">
         <img src="../img/host.png" alt="Host" width="120" height="120" style="padding-right: 30px;">
         <img src="../img/customer.png" alt="Customer" width="120" height="120"style="padding-left: 30px;">
@@ -58,17 +59,17 @@
         <label><input type="radio" name ="UserType" value ="Customer"style="margin-left:80px"></label>
     </div>
     <div style="float:right; padding-right: 20%">
-        <form name="login" method="post">
             <input id="input1" type="text" name="user_ID" placeholder="아이디 입력" ><br>
             <input id="input1" type="password" name="user_PW1" placeholder="비밀번호 입력">
-        </form>
+
     </div>
     <br><br> <br><br><br>
     <div style="float: right;"></div>
     <!--로그인성공시-->
-        <a href = "/mainPageCustomer"><input id="input2" type="button" name="Login"  value="로그인"></a></p>
+        <a href = "/mainPageCustomer"><input id="input2" type="submit" name="Login"  value="로그인"></a></p>
         <p style="font-size: medium; position:absolute; right:30%; padding-top: 1%;">아직 회원이 아니신가요?</p>
         <br><a href = "/signup"><input id="input2" type="button" name="SignUp"  value="회원 가입"></a>
     </div>
+    </form>
 </container>
 </html>
