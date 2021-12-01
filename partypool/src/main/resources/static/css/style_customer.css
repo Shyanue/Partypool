@@ -58,7 +58,7 @@ container{/*내용물 박스 for header1*/
 }
 mainPageBox{/*시작화면, 회원 메인화면 박스 / container1 종속*/
     position:absolute;
-    top: 110px;
+    top: 120px;
     left: 30px;
     width: 46%;
     height: 400px;
@@ -81,7 +81,7 @@ mainPageBox{/*시작화면, 회원 메인화면 박스 / container1 종속*/
 map{/*지역 옆 지도*/
     position: absolute;
     display: flex;
-    top: 110px;
+    top: 120px;
     height: 400px;
     width: 45%;
     float:right;
