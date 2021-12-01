@@ -42,7 +42,7 @@
         width: 51%;
         align-items: center;
         display : grid;
-
+        justify-content:center;
     }
     .thumbnail{
         border-radius: 8px;
@@ -104,21 +104,21 @@
             <li style="float:right;"><a href = "/" style ="padding-right: 65px;">로그아웃</a></li>
         </nav>
     </header1>
-    <container>
+     <container style="left:8%; right:8%">
         <!--원하는 파티룸 정보 입력 받기-->
         <leftSearchBox>
             <!--이전페이지에서 입력받은 주소 가져오기-->
-            <p style="color:white;">이 장소에는<br>이런 파티룸이 있어요!</p>
-            <div id ='dest' name ="destination" class="selectionBox" style="top: 10px; width: 380px;
+            <p style="color:white; padding-top: 40px">이 장소에는<br>이런 파티룸이 있어요!</p>
+            <div id ='dest' name ="destination" class="selectionBox" style="top: 10px; width: 87%;
             line-height: 45px; font-weight:bold;">
-               
+               이전 페이지에서 입력받은 주소
             </div>
             <!--원하는 가격 입력받기-->
           
             <div class="slidecontainer">
                 <div class="selectionBox" style="width:28%;top:30px;line-height: 45px; font-weight:bold;
                 text-align: left; font-size:medium; padding-left: 10px; ">가격: 
-                    <span id="selectedPrice"></span>원
+                    <span id="selectedPrice"></span>원
                 </div>
                 <input type="range" min="20000" max="300000" value="100000" step ="5000" class="slider" id="PriceRange" 
                     style="margin-top:40px; float:left; margin-left: 33px">
@@ -135,11 +135,11 @@
             </script>
 
             <!--날짜 선택받기-->
-            <input type="date" class="selectionBox" style="width: 40%;top:30px;font-weight:bold;">
+            <input type="date" class="selectionBox" style="width: 40%;top:30px;font-weight:bold; margin-right: 5%">
 
             </input>
             <!--인원수 선택받기-->
-            <select id="NoOfVisitors" class="selectionBox" style="font-size:medium; top: 32px; width: 41%;font-weight:bold;">
+            <select id="NoOfVisitors" class="selectionBox" style="font-size:medium; top: 32px; width: 41%;font-weight:bold; ">
                 <option selected> 인원수 </option>
                 <option value="1to2">1~2 명</option>
                 <option value="3to4">3~4 명</option>                

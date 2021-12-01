@@ -53,7 +53,7 @@
     </header1>
     
 </body>
-<container style="height: 500px;left: 100px;right: 100px;">
+<container style="height: 500px;left:10%; right: 10%"">
     <button id="input2" type="button" style="float:left; left:30px; top: 20px">
         <a href="/roomReserv" style="text-decoration: none; color: black;">이전으로</a>
     </button>
@@ -69,7 +69,16 @@
             <br><br><br>
         <label><input class="radio" type="radio" name ="PaymentMethod" value ="Card" >
             <p style="padding-left: 50px;font-size: large; float:left">신용카드</p></label>
-        <button id="input2" type="button" style="float:right; right:30px; bottom: 30px">결제하기</button>
+                <button id="input2" type="button" style="float:right; right:30px; bottom: 30px" onclick="pay()">결제하기</button>
+        <script>
+            function pay(){
+                var result = confirm(" 결제가 완료되었습니다! \n 메인페이지로 돌아가시겠습니까?");
+                if(result){
+                    location ="/mainPageCustomer";
+                }
+                else{}
+            }
+        </script>
     </div>
 </container>
 </html>

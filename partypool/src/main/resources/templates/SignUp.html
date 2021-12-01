@@ -58,25 +58,46 @@
             <span style="font-size: medium;font-weight: bold; padding-right: 7px;">회원</span>
         </div>
         <!--Radio Buttons-->
-        <label><input type="radio" name ="UserType" value ="Host" style="margin-right:95px"></label>
-        <label><input type="radio" name ="UserType" value ="Customer"style="margin-left:92px"></label>
+        <form>
+            <label><input type="radio" name ="UserType" value ="Host" style="margin-right:95px"></label>
+            <label><input type="radio" name ="UserType" value ="Customer"style="margin-left:92px"></label>
+        </form>
     </div>
     <div>
         <br>
         <p>STEP 2 : 아이디와 비밀번호를 입력하세요</p>
-        <div style="float:left; text-align:left; padding-left: 35%;">
+        <div style="float:left; text-align:left; padding-left: 35%;margin-left:4%">
             <form name="SignUp" method="post">
                 <p style="font-size: medium;">아이디 확인<br>
-                <input class="input1" type="text" id="user_ID" placeholder="아이디 입력" >
+                <input class="input1" type="text" name = "user_ID" id="user_ID" placeholder="아이디 입력" >
                 </p>
                 <p style="font-size: medium;">비밀번호<br> 
-                <input class="input1" type="password" id="user_PW1" placeholder="비밀번호 입력">
+                <input class="input1" type="password" name = "user_PW1" id="user_PW1" placeholder="비밀번호 입력">
                 </p>
                 <p style="font-size: medium;">비밀번호 재확인<br> 
-                <input class="input1" type="password" id="user_PW2" placeholder="비밀번호 재입력">
-                <input class="input2" type="button" id="user_PWcheck" value="비밀번호 확인" onclick="checkPw();"> 
+                <input class="input1" type="password" name="user_PW2" id="user_PW2" placeholder="비밀번호 재입력">
+                <input class="input2" type="button" name = "user_PWcheck" id="user_PWcheck" value="비밀번호 확인" onclick="checkPW();"> 
                 </p>   
             </form>
+            <script type="text/javascript">
+                function checkPW() {
+                  var p1 = document.getElementById('user_PW1').value;
+                  var p2 = document.getElementById('user_PW2').value;
+
+                  if(p1.length < 6) {
+                          alert('비밀번호는 6글자 이상이어야 합니다.');
+                          return false;
+                  }
+
+                  if( p1 != p2 ) {
+                    alert(" 비밀번호가 일치하지 않습니다!\n 다시 한번 확인해주세요.");
+                    return false;
+                  } else{
+                    alert(" 비밀번호가 일치합니다!\n 회원가입을 완료해주세요.");
+                    return true;
+                  }
+            }
+          </script>
         </div>
     </div>
     <br><br> <br><br><br><br><br><br><br><br><br><br>
@@ -84,7 +105,7 @@
         <a href = "/login"><input class="input3" type="button" id="Login"  value="로그인"></a></p>
         <br>
         <div style="float:right; padding-right: 10%; font-size: large;">
-            <input class="input3" type="button" id="SignUpComplete" value="완료" onclick="signUp();">
+            <input class="input3" type="button" id="SignUpComplete" value="완료">
         </div>
     </container>
 </body>
