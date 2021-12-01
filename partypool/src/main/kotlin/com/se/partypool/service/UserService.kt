@@ -21,7 +21,7 @@ class UserService(
     fun register(id: String, pw: String, type: String?, httpServletResponse: HttpServletResponse):String {
         var page=""
         httpServletResponse.characterEncoding="UTF-8"
-        var out:PrintWriter=httpServletResponse.writer
+
         if(id.isNotBlank()) {
             if(pw.isNotBlank()) {
                 if(!type.isNullOrBlank()) {
@@ -29,18 +29,21 @@ class UserService(
                     page="StartPage"
                 }
                 else{
+                    var out:PrintWriter=httpServletResponse.writer
                     out.println("<script>alert('타입을 선택해주세요.'); </script>")
                     out.flush()
                     page="SignUp"
                 } //type 선택하지 않은 경우
             }
             else{
+                var out:PrintWriter=httpServletResponse.writer
                 out.println("<script>alert('비밀번호를 입력해주세요.'); </script>")
                 out.flush()
                 page="SignUp"
             } //pw를 입력하지 않은 경우
         }
         else{
+            var out:PrintWriter=httpServletResponse.writer
             out.println("<script>alert('아이디를 입력해주세요.'); </script>")
             out.flush()
             page="SignUp"
@@ -57,6 +60,7 @@ class UserService(
             out.flush()
             idcheck_result=false
         }
+        else idcheck_result=true
     }
     fun pwcheck(pw1:String, pw2:String, httpServletResponse: HttpServletResponse){
         if(!pw1.equals(pw2)){
@@ -66,6 +70,7 @@ class UserService(
             out.flush()
             pwcheck_result=false
         }
+        else pwcheck_result=true
     }
     fun resultcheck():Boolean{
         var totalresult=false
